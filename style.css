@@ -1,0 +1,740 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #f3f3f3;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+   background: #333;
+}
+
+body::-webkit-scrollbar-thumb {
+   background-color: #EA5EB5;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: transparent;
+}
+
+header.scrolled {
+    background-color: #FFD765;
+}
+
+.icon-muuka {
+    display: none;
+}
+
+.icon-muuka-portada {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+header #myMenu a {
+    width: 9%;
+}
+
+header #myMenu a img {
+    width: 100%;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    transition: ease-in-out 0.3s;
+}
+
+#myMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#myMenu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+#myMenu ul li a {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5em;
+    color: #EA5EB5;
+    text-decoration: none;
+}
+
+.logo-list {
+    display: none;
+}
+
+#portada {
+    background-color: #FFD765;
+    height: 100vh;
+}
+
+#portada video {
+    max-width: 500px;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 3em;
+    height: 100%;
+}
+
+.container div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+}
+
+.container div a {
+    text-decoration: none;
+    padding: 10px 55px;
+    background-color: #EA5EB5;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1.6em;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+}
+
+.container div a:hover{
+    color: #333;
+    transition: all 0.2s ease-in-out;
+}
+
+#about {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #f3f3f3;
+}
+
+#about .container-2 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#about .container-2 h3 {
+    font-size: 3rem;
+}
+
+#about img {
+    width: 40%;
+    object-fit: contain;
+}
+
+#about .container-2 div {
+    text-align: center;
+}
+
+#about .container-2 div h1 {
+    text-decoration: none;
+    color: #333;
+    font-size: 6em;
+    line-height: 1;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#about .container-2 .text-1 {
+    -webkit-text-stroke: 2px #EA5EB5;
+    color: transparent;
+}
+
+#about .subtitulos {
+    display: flex;
+    gap: 15px;
+    font-size: 1.2em;
+    color: #EA5EB5;
+    align-items: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 0 10px;
+    background-color: #f3f3f3;
+    padding: 6% 10%;
+}
+
+.gallery h1 {
+    grid-column: 1/-1;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4em;
+    color: #EA5EB5;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.gallery-item:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.formulario {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 100px;
+    background-color: #FFD765;
+}
+
+.formulario-contenedor{
+
+    display: flex;
+    align-items: center;
+    padding: 0 3%;
+    gap: 5%;
+}
+
+.formulario form {
+    width: 100%;
+}
+
+.formulario form label {
+    width: 100%;
+}
+
+.formulario form {
+    gap: 20px;
+}
+
+.formulario form input[type="text"],
+.formulario form input[type="email"],
+.formulario form textarea {
+    max-width: 100%;
+}
+
+.formulario form button[type="submit"] {
+    width: 100%;
+}
+
+.formulario form div {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+}
+.formulario form {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario form label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.formulario form input[type="text"],
+.formulario form input[type="email"],
+.formulario form textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    font-size: 16px;
+    color: #333;
+    margin-top: 5px;
+    transition: background-color 0.3s;
+}
+
+.formulario form input[type="text"]:focus,
+.formulario form input[type="email"]:focus,
+.formulario form textarea:focus {
+    background-color: #d1d1d1;
+}
+
+.formulario form button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #EA5EB5;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.formulario form button[type="submit"]:hover {
+    background-color: #c04e94;
+}
+
+.texto-izquierda div h1 {
+    text-decoration: none;
+    color: #333;
+    font-size: 6em;
+    line-height: 1;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.texto-izquierda div h2 {
+    text-decoration: none;
+    color: #EA5EB5;
+    font-size: 2em;
+    line-height: 1;
+}
+
+.texto-izquierda p{
+
+    font-size: 1.3em;
+    color: #333;
+}
+
+.texto-izquierda {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    gap: 15px;
+    font-size: 1em;
+    color: #EA5EB5;
+}
+
+
+
+footer {
+    background-color: #EA5EB5;
+    display: flex;
+    position: relative;
+    bottom: 0;
+    padding: 2%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+footer .social {
+    display: flex;
+    gap: 30px;
+    font-size: clamp(14px, (1rem + 1vw) * 1, 3rem);
+}
+
+footer .social a {
+    text-decoration: none;
+    color: #fff;
+    display: contents;
+}
+
+footer .social a i:hover {
+    color: #333;
+    transition: 0.3s ease-in-out;
+}
+
+footer h1 {
+    font-size: clamp(10px, (1rem + 1vw) * 1, 3rem);
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        background-color: #FFD765;
+    }
+
+    #myMenu {
+        top: 0;
+    }
+
+    #about {
+        height: 100%;
+        flex-direction: column;
+    }
+
+    #about img {
+        width: 100%;
+    }
+
+    #about .container-2 {
+        padding: 10% 0;
+    }
+
+    #myMenu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #FFD765;
+        z-index: 1;
+    }
+
+    #myMenu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        gap: 45px;
+    }
+
+    #myMenu li {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    #myMenu li:last-child {
+        margin-bottom: 0;
+    }
+
+    #myMenu a {
+        font-size: 1.5rem;
+        display: contents;
+    }
+
+    .menu-icon {
+        display: block;
+        top: 15px;
+        right: 15px;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-icon i {
+        font-size: 2rem;
+        color: #EA5EB5;
+    }
+
+    header #myMenu a img {
+        width: 18%;
+        display: none;
+    }
+
+    .icon-muuka {
+        display: inline;
+    }
+
+    .icon-muuka-portada {
+        display: contents;
+    }
+
+    .icon-muuka-portada img {
+        width: 20%;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    #myMenu.show {
+        display: flex;
+    }
+
+    .formulario{
+
+        height: 100%;
+        padding: 10% 0;
+    }
+
+    .formulario-contenedor{
+        flex-direction: column;
+        width: 90%;
+        gap: 30px;
+    }
+
+    .texto-izquierda{
+
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        grid-gap: 10px;
+    }
+
+    .gallery h1 {
+        font-size: clamp(48px, (1rem + 1vw) * 1.25, 3rem);
+    }
+
+    .gallery-item {
+        height: auto;
+    }
+
+    .logo-list {
+        display: none;
+    }
+
+    .icon-muuka-portada img {
+        width: 50%;
+    }
+
+    .icon-muuka-portada img {
+        width: 35%;
+    }
+
+    .container div {
+        flex-direction: column;
+    }
+
+    #about .container-2 {
+        padding: 10% 0;
+        gap: 10px;
+        margin: 10px;
+    }
+
+    #about .container-2 h3 {
+        font-size: 1.6rem;
+    }
+
+    #about .container-2 div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #about .container-2 div h1 {
+        font-size: clamp(48px, (1rem + 1vw) * 1.25, 3rem);
+    }
+
+    #about .container-2 .subtitulos {
+        gap: 0;
+    }
+
+    #about .container-2 .subtitulos span {
+        font-size: clamp(10px, (1rem + 1vw) * 1.25, 3rem);
+    }
+
+    #about .subtitulos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formulario-contenedor{
+        width: 90%;
+    }
+
+    .formulario form div {
+        flex-direction: column;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+
+    footer {
+        padding: 5%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .icon-muuka-portada img {
+        width: 40%;
+    }
+}
+
+.boton-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+    z-index: 1;
+    border: none; 
+    outline: none; 
+    background-color: #FFD765; 
+    color: #333;
+    cursor: pointer;
+    padding: 10px 18px; 
+    border-radius: 5px; 
+    font-size: 18px; 
+    transition: opacity 0.2s ease-in-out;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.boton-top:hover {
+    color: #EA5EB5; 
+    transition: all 0.2s ease-in-out;
+}
+
+.formulario-contenedor{
+    width: 90%;
+}
+@media screen and (max-width: 600px) {
+    .boton-top {
+      bottom: 10px;
+      right: 10px;
+      padding: 11px 17px;
+      font-size: 16px;
+    }
+}
+
+.show {
+    display: block;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 700px;
+}
+
+.modal-content {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Transición de fundido */
+}
+
+.modal-content.show {
+    opacity: 1;
+}
+
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para el contenedor del número de imágenes */
+.image-count-container {
+    z-index: 2;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+/* Estilos para las flechas de navegación */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Posicionamiento de la flecha izquierda */
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Posicionamiento de la flecha derecha */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Efecto Hover para las flechas */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}

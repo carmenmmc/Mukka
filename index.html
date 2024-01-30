@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Muuka</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="imagenes/favicon.png">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<a class="icon-muuka-portada" href="#portada"><img src="imagenes/logotipo.png" alt=""></a>
+		<div class="menu-icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<nav id="myMenu">
+            <a class="logo" href="#portada"><img src="imagenes/logotipo.png" alt=""></a>
+			<ul>
+				<li class="menu-item"><a href="#about">Sobre mí</a></li>
+				<li class="menu-item"><a href="#projects">Proyectos</a></li>
+				<li class="menu-item"><a href="#contact">Contacto</a></li>
+				<li class="logo-list menu-item"><a href="#portada"><img src="imagenes/logotipo.png" alt=""></a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<section id="portada">
+		<div class="container">
+			<video id="portada" id="video-fondo" src="imagenes/Logo.mp4" autoplay muted loop></video>
+			<div>		
+				<a href="#about">Conóceme</a>
+				<a href="Carmen CV.pdf">Mira mi CV</a>
+			</div>
+		</div>
+	</section>
+
+	<section id="about">
+		<div class="container-2">
+            <h3>Mi nombre es Carmen Martín</h3>
+            <div>
+                <h1>Diseñadora gráfica</h1>
+                <h1 class="text-1">& editora de videos</h1>
+            </div>
+			<div class="subtitulos">
+				<span>modeladora 3D</span>
+				<span>•</span>
+				<span>filmmaker</span>
+				<span>•</span>
+				<span>community manager</span>
+			</div>
+			
+		</div>
+		<img src="imagenes/yo.png" alt="">
+	</section>
+
+	<section id="projects" class="gallery">
+
+		<h1>Proyectos</h1>
+		<div class="gallery-item">
+		  <img src="imagenes/fotos-proyect/Box Mockups.png" alt="Image 1">
+		</div>
+		<div class="gallery-item">
+		  <img src="imagenes/fotos-proyect/elpaso-mockup.png" alt="Image 2">
+		</div>
+		<div class="gallery-item">
+		  <img src="imagenes/fotos-proyect/mockup-rrss.png" alt="Image 3">
+		</div>
+		<div class="gallery-item">
+		  <img src="imagenes/fotos-proyect/tarjetas-ekiss.png" alt="Image 4">
+		</div>
+		<div class="gallery-item">
+		  <img src="imagenes/fotos-proyect/DSC00672.jpg" alt="Image 5">
+		</div>
+		<div class="gallery-item">
+		  <img src="imagenes/fotos-proyect/DSC00781.jpg" alt="Image 6">
+		</div>
+		<div style="grid-column: 1/-1;" class="gallery-item">
+			<img src="imagenes/fotos-proyect/DSC00645.jpg" alt="Image 6">
+		</div>
+	</section>
+
+	<section id="contact" class="formulario">
+		<div class="formulario-contenedor">
+			<div class="texto-izquierda">
+				<div>
+					<h1>Contacta conmigo</h1>
+					<h2>¡Estoy aquí para ayudarte!</h2>
+				</div>
+				<p>¿Tienes algún proyecto en mente o simplemente quieres pasarte a saludar? En cualquier caso, no dudes en contactar conmigo.
+					Estoy aquí para ayudarte en lo que necesites. Tu opinión es muy importante para mí, estoy emocionada de escucharte. ¡Espero tu mensaje con ansias!</p>
+			</div>
+			<form name="contacto" netlify>
+				<label><input placeholder="Nombre" type="text" name="name" required></label>
+				<label><input placeholder="Correo" type="email" name="email" required></label>
+				<label><input placeholder="Asunto" type="text" name="subject" required></label>
+				<label><textarea placeholder="Mensaje" name="comments" required></textarea></label>
+				<button type="submit">Enviar</button>
+			</form>
+		</div>
+	</section>
+	
+		
+	</section>
+
+	<footer>
+		<div class="social">
+		  <a href="mailto:muuka.design@gmail.com"><i class="fas fa-envelope"></i></a>
+		  <a href="https://www.instagram.com/muuka_11/" target="_blank"><i class="fab fa-instagram"></i></a>
+		</div>
+		<h1>© Copyright 2023 Carmen Martín</h1>
+	 </footer>
+
+	<a href="#" class="boton-top">^</a>
+
+
+	<script src="https://kit.fontawesome.com/828e5f1d95.js" crossorigin="anonymous"></script>
+	<script src="menu movil.js"></script>
+	<script src="boton.js"></script>
+	<script src="gallery.js"></script>
+</body>
+</html>
