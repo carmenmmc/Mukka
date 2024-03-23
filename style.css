@@ -125,7 +125,7 @@ header #myMenu a img {
     padding: 10px 55px;
     background-color: #EA5EB5;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 999px;
     font-size: 1.6em;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 1px;
@@ -190,11 +190,13 @@ header #myMenu a img {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: minmax(200px, auto);
     grid-gap: 20px;
     padding: 0 10px;
     background-color: #f3f3f3;
     padding: 6% 10%;
+    grid-auto-flow: dense;
 }
 
 .gallery h1 {
@@ -206,18 +208,115 @@ header #myMenu a img {
 }
 
 .gallery-item {
+    width: 100%;
+    height: auto;
     position: relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, height 0.2s ease-in-out; /* Agregar transiciones */
+    grid-column-end: span 1;
+    border-radius: 10px;
+}
+
+.image-container {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    overflow: hidden; /* Oculta el gradiente que se extiende más allá de la imagen */
+    height: 100%;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+    object-fit: cover;
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, rgba(15,15,15,0), rgba(15,15,15,.50));
+    z-index: 1; /* Asegura que el gradiente esté por encima de la imagen */
+}
+
+.etiqueta {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #EA5EB5;
+    color: #fff;
+    font-size: 16px;
+    padding: .6em 1.2em;
+    border-radius: 999px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.post-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(180deg, rgba(15,15,15,0), rgba(15,15,15,100%));
+    padding: 20px;
+    transition: transform 0.3s ease;
+    transform: translateY(100%);
+    z-index: 1;
+}
+
+.gallery-item:hover .etiqueta {
+    transform: translateY(-5%);
+}
+
+.gallery-item:hover .post-text {
+    transform: translateY(0);
+}
+
+.post-title {
+    color: #fff;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.post-parrafo {
+    color: #fff;
+    font-size: 1em;
+}
+
+.gallery-item img {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out; /* Agregar transición para la imagen */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Ampliar la imagen al hacer hover */
+}
+
+.gallery-item video{
+
+    transition: transform 0.2s ease-in-out; /* Agregar transición para la imagen */
+}
+
+.gallery-item:hover video {
+    transform: scale(1.1); /* Ampliar la imagen al hacer hover */
 }
 
 .gallery-item:hover {
     cursor: pointer;
-    transform: scale(1.05);
 }
+
 
 .gallery-item img {
     display: block;
@@ -310,7 +409,7 @@ header #myMenu a img {
     width: 100%;
     padding: 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 999px;
     background-color: #EA5EB5;
     color: #fff;
     font-size: 18px;
@@ -396,6 +495,7 @@ footer h1 {
 @media screen and (max-width: 768px) {
     header {
         background-color: #FFD765;
+        z-index: 2;
     }
 
     #myMenu {
@@ -616,7 +716,7 @@ footer h1 {
     color: #333;
     cursor: pointer;
     padding: 10px 18px; 
-    border-radius: 5px; 
+    border-radius: 999px; 
     font-size: 18px; 
     transition: opacity 0.2s ease-in-out;
     text-decoration: none;
@@ -649,7 +749,6 @@ footer h1 {
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
     left: 0;
     top: 0;
     width: 100%;
@@ -670,6 +769,23 @@ footer h1 {
     transition: opacity 0.5s ease; /* Transición de fundido */
 }
 
+.modal-content-container {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden; /* Evitar la barra de desplazamiento */
+}
+
+.modal-content-container img,
+.modal-content-container video {
+    max-width: 100%;
+    max-height: calc(100vh - 120px); /* Ajustar la altura máxima según el tamaño de la ventana gráfica */
+    height: auto;
+    display: block; /* Asegurar que la imagen o el video ocupen todo el ancho disponible */
+    margin: 0 auto; /* Centrar la imagen o el video horizontalmente */
+}
+
+
 .modal-content.show {
     opacity: 1;
 }
@@ -680,28 +796,34 @@ footer h1 {
     top: 15px;
     right: 35px;
     color: #f1f1f1;
-    font-size: 40px;
+    font-size: 2em;
     font-weight: bold;
     transition: 0.3s;
 }
 
 .close:hover,
 .close:focus {
-    color: #bbb;
+    color: #c04e94;
     text-decoration: none;
     cursor: pointer;
 }
 
 /* Estilos para el contenedor del número de imágenes */
 .image-count-container {
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
     z-index: 2;
     color: #fff;
     display: flex;
-    justify-content: center;
     margin-top: 20px;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 16px;
+}
+
+.image-count {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.6em;
 }
 
 
@@ -709,14 +831,11 @@ footer h1 {
 .prev,
 .next {
     cursor: pointer;
-    position: absolute;
     top: 50%;
     width: auto;
-    padding: 16px;
-    margin-top: -50px;
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2em;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
@@ -736,5 +855,5 @@ footer h1 {
 
 /* Efecto Hover para las flechas */
 .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+    color: #c04e94;
 }
